@@ -1,0 +1,46 @@
+.sidebar {
+  margin-top: 40px;
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+  &__count {
+    margin-left: 2px;
+  }
+
+  &__footer {
+    padding-left: 16px;
+
+    &-info {
+      margin-bottom: 15px;
+      span {
+        display: inline-block;
+      }
+    }
+
+    span {
+      margin-top: 10px;
+    }
+  }
+
+  &__main {
+    max-width: 244px
+  } 
+
+  h1 {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #9C9CAA;
+  }
+
+  // &__icon {
+  //   width: 20px;
+  // }
+  
+  .active {
+    color: #04C800;
+  }
+}

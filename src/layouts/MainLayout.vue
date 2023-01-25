@@ -9,49 +9,41 @@
     >
       <q-list>
         <div class="sidebar">
-          <div class="q-pa-md" style="max-width: 274px">
-            <q-title class="text-gray-200 q-ml-md text-uppercase"
-              >все профессии</q-title
-            >
+          <div class="sidebar__main">
+            <h1 class="text-gray-200 q-ml-md text-uppercase">Все професии</h1>
             <q-list class="q-mt-md">
-              <q-items>
-                <q-item
-                  v-for="(item, index) in items"
-                  :key="item.id"
-                  text-color="white"
-                  clickable
-                  v-ripple
-                  content-class="bg-gray-100"
-                  class="sidebar__item"
-                  :class="[active === index ? 'bg-gray-300' : '']"
-                  @click="setActive(index)"
+              <q-item
+                v-for="(item, index) in items"
+                :key="item.text"
+                clickable
+                v-ripple
+                content-class="bg-gray-100"
+                class="sidebar__item"
+                :class="[active === index ? 'bg-gray-300' : '']"
+                @click="active = index"
+              >
+                <q-item-section
+                  class="text-gray-100"
+                  :class="{ active: active === index }"
                 >
-                  <q-item-section
-                    class="text-gray-100"
-                    :class="{ active: active === index }"
-                  >
-                    {{ item.text }}
-                  </q-item-section>
-                  <q-item-section avatar>
-                    <img src="../assets/sidebarIcon.svg" alt="" />
-                  </q-item-section>
-                  <text-overline
-                    class="sidebar__amount text-gray-200 text-center"
-                  >
-                    {{ item.amount }}
-                  </text-overline>
-                </q-item>
-              </q-items>
-              <q-separator></q-separator>
+                  {{ item.text }}
+                </q-item-section>
+                <q-item-section avatar>
+                  <img :src="require('assets/sidebarIcon.svg')" alt="" />
+                </q-item-section>
+                <span class="sidebar__count text-gray-200 text-center">
+                  {{ item.count }}
+                </span>
+              </q-item>
             </q-list>
           </div>
           <div class="sidebar__footer">
-            <text-overline class="text-gray-200 text-center">
-              Правила
-            </text-overline>
-            <text-overline class="text-gray-200 text-center q-ml-md">
-              Сообщества
-            </text-overline>
+            <div class="sidebar__footer-info">
+              <span class="text-gray-200 text-center"> Правила </span>
+              <span class="text-gray-200 text-center q-ml-md">
+                Сообщества
+              </span>
+            </div>
             <span class="text-gray-200">Ingternet © 2022</span>
           </div>
         </div>
@@ -73,23 +65,18 @@ export default {
   data: () => ({
     leftDrawerOpen: false,
     items: [
-      { id: 1, text: "Все подряд", amount: 54 },
-      { id: 2, text: "Front-end", amount: 12 },
-      { id: 4, text: "Back-end", amount: 7 },
-      { id: 5, text: "UX/UI", amount: 6 },
-      { id: 6, text: "Брендинг", amount: 8 },
-      { id: 7, text: "QA - тестирование", amount: 4 },
-      { id: 8, text: "SMM", amount: 12 },
-      { id: 9, text: "SEO", amount: 5 },
-      { id: 10, text: "1-С", amount: 5 },
+      { text: "Все подряд", count: 54 },
+      { text: "Front-end", count: 12 },
+      { text: "Back-end", count: 7 },
+      { text: "UX/UI", count: 6 },
+      { text: "Брендинг", count: 8 },
+      { text: "QA - тестирование", count: 4 },
+      { text: "SMM", count: 12 },
+      { text: "SEO", count: 5 },
+      { text: "1-С", count: 5 },
     ],
 
     active: 0,
   }),
-  methods: {
-    setActive: function (i) {
-      this.active = i;
-    },
-  },
 };
 </script>
