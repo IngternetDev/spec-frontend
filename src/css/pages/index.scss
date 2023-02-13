@@ -1,0 +1,17 @@
+.custom-caption {
+  text-align: center;
+  padding: 12px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+
+  @include sm-up {
+  }
+}
+
+.recomended {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 47px;
+
+  margin-left: 60px;
+}
