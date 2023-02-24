@@ -19,14 +19,114 @@
   &__logo {
   }
   &__profile {
+    margin: 0 101px 0 auto;
+    cursor: pointer;
+
     @include xs-only {
       margin-right: 40px;
     }
     @include sm-only {
       margin-right: 40px;
     }
-    margin-right: 101px;
   }
   &__theme {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
   }
+}
+.profile {
+  &__img {
+    position: relative;
+    overflow: visible;
+  }
+  &__img img {
+  }
+  &__status-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: gray;
+    // border: 2px solid white;
+    top: 0;
+    right: 0;
+    position: absolute;
+    z-index: 100;
+  }
+  .online {
+    background-color: $green;
+  }
+}
+
+.profile-menu {
+  & {
+    background-color: $gray-300;
+    color: $gray-50;
+    border-radius: 15px;
+    min-width: 205px;
+  }
+
+  &__list {
+    padding: 10px 10px;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  &__link {
+    display: block;
+
+    color: $gray-50;
+    text-decoration: none;
+  }
+  &__item:hover {
+    background-color: $gray-400;
+  }
+
+  &__switch {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    border-radius: 18px;
+    background: rgb(209, 209, 209);
+    z-index: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition-duration: 300ms;
+  }
+  &__switch::after {
+    content: "";
+    height: 14px;
+    width: 14px;
+    border-radius: 8px;
+    background: $gray-300;
+    top: 3px;
+    left: 3px;
+    transition-duration: 300ms;
+    position: absolute;
+    z-index: 1;
+  }
+  .switch-on {
+    background: $green;
+  }
+  .switch-on::after {
+    background: #fff;
+    left: 23px;
+  }
+}
+
+.overflow-hidden {
+  overflow: visible;
 }

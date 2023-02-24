@@ -7,7 +7,7 @@
       bordered
       content-class="bg-gray-500"
     >
-      <q-list>
+      <!-- <q-list>
         <div class="sidebar">
           <div class="sidebar__main">
             <h1 class="text-gray-200 q-ml-md text-uppercase">Все професии</h1>
@@ -47,7 +47,7 @@
             <span class="text-gray-200">Ingternet © 2022</span>
           </div>
         </div>
-      </q-list>
+      </q-list> -->
     </q-drawer>
 
     <q-page-container>
@@ -62,21 +62,26 @@ export default {
   components: {
     "v-header": async () => await import("components/header.vue"),
   },
-  data: () => ({
-    leftDrawerOpen: false,
-    items: [
-      { text: "Все подряд", count: 54 },
-      { text: "Front-end", count: 12 },
-      { text: "Back-end", count: 7 },
-      { text: "UX/UI", count: 6 },
-      { text: "Брендинг", count: 8 },
-      { text: "QA - тестирование", count: 4 },
-      { text: "SMM", count: 12 },
-      { text: "SEO", count: 5 },
-      { text: "1-С", count: 5 },
-    ],
+  // data: () => ({
+  //   leftDrawerOpen: false,
+  //   items: [
+  //     { text: "Все подряд", count: 54 },
+  //     { text: "Front-end", count: 12 },
+  //     { text: "Back-end", count: 7 },
+  //     { text: "UX/UI", count: 6 },
+  //     { text: "Брендинг", count: 8 },
+  //     { text: "QA - тестирование", count: 4 },
+  //     { text: "SMM", count: 12 },
+  //     { text: "SEO", count: 5 },
+  //     { text: "1-С", count: 5 },
+  //   ],
 
-    active: 0,
-  }),
+  //   // active: 0,
+  // }),
+  data() {
+    return {
+      leftDrawerOpen: false,
+    };
+  },
 };
 </script>
