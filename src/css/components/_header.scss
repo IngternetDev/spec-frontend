@@ -1,4 +1,7 @@
 .header {
+  padding-left: 4vw;
+  padding-right: 4.7vw;
+
   @include md-up {
     padding-left: 16.9vw;
     padding-right: 7.15vw;
@@ -9,30 +12,46 @@
     display: flex;
     align-items: center;
     line-height: 0;
-    @include xs-only {
-      padding: 5px 0;
-    }
+    padding: 14px 0;
+
     @include sm-up {
       padding: 17px 0;
     }
   }
   &__logo {
+    order: 1;
+    // @include xp-up {
+
+    // }
   }
   &__profile {
-    margin: 0 101px 0 auto;
+    // margin: 0 40px 0 auto;
     cursor: pointer;
+    order: 2;
 
-    @include xs-only {
-      margin-right: 40px;
+    // @include xs-only {
+    //   margin-right: 40px;
+    // }
+    @include sm-up {
+      margin: 0 40px 0 auto;
+
+      order: 2;
     }
-    @include sm-only {
-      margin-right: 40px;
+    @include md-up {
+      margin: 0 101px 0 auto;
     }
   }
   &__theme {
     cursor: pointer;
     width: 20px;
     height: 20px;
+    order: 2;
+    margin: 0 40px 0 auto;
+
+    @include sm-up {
+      margin: 0;
+      order: 3;
+    }
   }
 }
 .profile {
@@ -65,6 +84,24 @@
     border-radius: 15px;
     min-width: 205px;
   }
+  &__square {
+    width: 25px;
+    height: 25px;
+    transform: rotate(45deg);
+    background-color: red;
+
+    position: absolute;
+    top: -1.5px;
+    right: 5.5vw;
+    border-radius: 8px;
+
+    @include sm-only {
+      right: 49px;
+    }
+    @include md-up {
+      right: 129px;
+    }
+  }
 
   &__list {
     padding: 10px 10px;
@@ -80,6 +117,8 @@
     padding: 9px 10px;
     border-radius: 10px;
     cursor: pointer;
+    position: relative;
+    z-index: 2;
   }
 
   &__link {
