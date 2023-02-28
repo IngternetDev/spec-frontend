@@ -48,7 +48,7 @@
           </div>
         </div>
       </q-list>
-      </q-drawer>
+    </q-drawer>
 
     <q-page-container>
       <router-view />
