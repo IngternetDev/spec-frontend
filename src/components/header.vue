@@ -1,28 +1,30 @@
 <template>
   <q-header bordered class="header bg-gray-500">
     <div class="header__content">
-      <img class="header__logo" src="../assets/header/logo.svg" />
+      <img class="header__logo" src="../assets/header-logo.svg" />
       <img
-        v-if="darkTheme"
         @click="darkTheme = !darkTheme"
         class="header__theme"
-        src="../assets/header/sun.svg"
-      />
-      <img
-        v-else
-        @click="darkTheme = !darkTheme"
-        class="header__theme"
-        src="../assets/header/moon.svg"
+        :src="
+          darkTheme
+            ? require('assets/header-moon.svg')
+            : require('assets/header-sun.svg')
+        "
       />
       <div class="header__profile profile">
-        <q-avatar size="35px">
-          <div class="profile__img">
-            <img src="../assets/header/ava.png" />
-            <div class="profile__status-circle online"></div>
-          </div>
+        <q-avatar rounded size="35px">
+          <img src="../assets/header-ava.png" />
+          <q-badge
+            floating
+            rounded
+            :class="isOnline ? 'bg-green' : 'bg-gray-200'"
+          />
 
-          <q-menu content-class="profile-menu" :offset="[45, 5]">
-            <div class="profile-menu__square"></div>
+          <q-menu
+            content-class="profile-menu"
+            content-style="overflow:inherit"
+            :offset="[45, 5]"
+          >
             <ul class="profile-menu__list">
               <li class="profile-menu__item" @click="isSwitchOn = !isSwitchOn">
                 <a href="#" class="profile-menu__link"> Доступен</a>
@@ -55,11 +57,8 @@ export default {
     return {
       isSwitchOn: true,
       darkTheme: true,
-      isOnline: false,
+      isOnline: true,
     };
   },
-  methods: {},
 };
 </script>
-
-<style></style>

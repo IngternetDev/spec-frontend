@@ -20,21 +20,13 @@
   }
   &__logo {
     order: 1;
-    // @include xp-up {
-
-    // }
   }
   &__profile {
-    // margin: 0 40px 0 auto;
     cursor: pointer;
     order: 2;
 
-    // @include xs-only {
-    //   margin-right: 40px;
-    // }
     @include sm-up {
       margin: 0 40px 0 auto;
-
       order: 2;
     }
     @include md-up {
@@ -55,53 +47,13 @@
   }
 }
 .profile {
-  &__img {
-    position: relative;
-    overflow: visible;
-  }
-  &__img img {
-  }
-  &__status-circle {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: gray;
-    // border: 2px solid white;
-    top: 0;
-    right: 0;
-    position: absolute;
-    z-index: 100;
-  }
-  .online {
-    background-color: $green;
-  }
 }
 
 .profile-menu {
-  & {
-    background-color: $gray-300;
-    color: $gray-50;
-    border-radius: 15px;
-    min-width: 205px;
-  }
-  &__square {
-    width: 25px;
-    height: 25px;
-    transform: rotate(45deg);
-    background-color: red;
-
-    position: absolute;
-    top: -1.5px;
-    right: 5.5vw;
-    border-radius: 8px;
-
-    @include sm-only {
-      right: 49px;
-    }
-    @include md-up {
-      right: 129px;
-    }
-  }
+  background-color: $gray-300;
+  color: $gray-50;
+  border-radius: 15px;
+  min-width: 205px;
 
   &__list {
     padding: 10px 10px;
@@ -119,16 +71,17 @@
     cursor: pointer;
     position: relative;
     z-index: 2;
+    user-select: none;
   }
 
   &__link {
     display: block;
-
     color: $gray-50;
     text-decoration: none;
   }
   &__item:hover {
     background-color: $gray-400;
+    transition-duration: 500ms;
   }
 
   &__switch {
@@ -163,5 +116,37 @@
   .switch-on::after {
     background: #fff;
     left: 23px;
+  }
+  &::before {
+    content: "";
+    background: $gray-300;
+    height: 20px;
+    width: 20px;
+    border-radius: 8px;
+    position: absolute;
+    transform: rotate(45deg);
+    top: -2.6px;
+    right: 22px;
+
+    @media (min-width: 325px) and (max-width: 376px) {
+      right: 25px;
+    }
+    @media (min-width: 376px) and (max-width: 500px) {
+      right: 27px;
+    }
+    @media (min-width: 500px) and (max-width: 540px) {
+      right: 30px;
+    }
+    @media (min-width: 541px) and (max-width: 600px) {
+      right: 33px;
+    }
+
+    @include sm-only {
+      right: 52px;
+      left: auto;
+    }
+    @include md-up {
+      left: 53px;
+    }
   }
 }
